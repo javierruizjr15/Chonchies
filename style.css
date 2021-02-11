@@ -1,6 +1,9 @@
-h1 {
-  font-weight: bold;
+#cardD {
   display: flex;
   justify-content: center;
 }
 
+#donchon {
+  display: flex;
+  justify-content: center;
+}
