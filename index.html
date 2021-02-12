@@ -23,14 +23,17 @@
       <div class="card blue-grey darken-1">
         <div class="card-content white-text">
           <span class="card-title">Mafry,</span>
-          <p>
-            I'm sorry I acted like such a fool. 
-          </p>
-          <p>
-            To make you smile here's a little something special :)
-          </p>
-          <div>  </div>
-          <p>Click the button below to see a sexy pic of El Don Chonchon with no shirt on!!! :o</p>
+          <div id="gone">
+
+            <p>
+              I'm sorry I acted like such a fool. 
+            </p>
+            <p>
+              To make you smile here's a little something special :)
+            </p>
+            <div>  </div>
+            <p>Click the button below to see a sexy pic of El Don Chonchon with no shirt on!!! :o</p>
+          </div>
         </div>
         <a class="waves-effect waves-light btn center-align" id=btnD>Click me!!!</a>
         </div>
@@ -44,6 +47,10 @@
 
   <script>
 
+  var timesClicked = 0;
+
+  
+  
 
 // Heres start of working script
 document.getElementById('btnD').addEventListener('click',() =>{
@@ -51,10 +58,34 @@ document.getElementById('btnD').addEventListener('click',() =>{
   btnElem.src = 'https://media.giphy.com/media/nj257YL538Gdy/giphy.gif'
   alt = 'TPB'
 
-  document.getElementById('btnD').innerHTML = `CLICK ME AGAIN!!!`
+//  button.onclick = function () {
+    timesClicked++
+
+  
+
+  if (timesClicked <= 1) {
+    document.getElementById('btnD').innerHTML = `CLICK ME AGAIN!!!`
+    document.getElementById('gone').innerHTML = ``
+    
+  }
+  
+  else if (timesClicked > 1) {
+    document.getElementById('btnD').innerHTML = `AND AGAIN!!!`
+    document.getElementById('gone').innerHTML = ``
+    
+  }
+  else if (timesClicked > 3) {
+    document.getElementById('btnD').innerHTML = `OK QUERIDA THAT ENOUGH CLICKS`
+    document.getElementById('gone').innerHTML = ``
+  }
 
   document.getElementById('donchon').append(btnElem)
+
+  console.log('test', timesClicked)
+  
+
 })
+  
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
