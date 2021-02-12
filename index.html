@@ -22,7 +22,7 @@
     <div class="col s12 m12 center-align" id="cardD">
       <div class="card blue-grey darken-1">
         <div class="card-content white-text">
-          <span class="card-title">Mafry,</span>
+          <span class="card-title" id="mafry">Mafry,</span>
           <div id="gone">
 
             <p>
@@ -41,6 +41,8 @@
     </div>
   </div>
 
+  <div class="col s12 m12 center-align responsive-img" id="mypic">
+  </div>
 <div class="col s12 m12 center-align responsive-img" id="donchon"></div>
 
 <!-- <a class="waves-effect waves-light btn center-align">Click me!!!</a> -->
@@ -49,42 +51,64 @@
 
   var timesClicked = 0;
 
-  
-  
-
 // Heres start of working script
 document.getElementById('btnD').addEventListener('click',() =>{
   let btnElem = document.createElement('img')
   btnElem.src = 'https://media.giphy.com/media/nj257YL538Gdy/giphy.gif'
-  alt = 'TPB'
+  alt = 'Chonchon'
 
+  document.getElementById('btnD').innerHTML = `CLICK ME AGAIN!!!`
+  document.getElementById('gone').innerHTML = ``
 //  button.onclick = function () {
     timesClicked++
 
-  
+  console.log('test', timesClicked)
 
-  if (timesClicked <= 1) {
-    document.getElementById('btnD').innerHTML = `CLICK ME AGAIN!!!`
-    document.getElementById('gone').innerHTML = ``
-    
-  }
-  
-  else if (timesClicked > 1) {
+  if (timesClicked > 1 ) {
     document.getElementById('btnD').innerHTML = `AND AGAIN!!!`
     document.getElementById('gone').innerHTML = ``
     
   }
-  else if (timesClicked > 3) {
-    document.getElementById('btnD').innerHTML = `OK QUERIDA THAT ENOUGH CLICKS`
+  
+  if (timesClicked > 2 ) {
+    document.getElementById('btnD').innerHTML = `PERO CLICK ME AGAIN!!!`
+    document.getElementById('gone').innerHTML = `OK querida thats enough chonchons`
+    
+  }
+  if (timesClicked > 3) {
+    document.getElementById('btnD').innerHTML = `Y CLICK OTRA VEZ!!!`
     document.getElementById('gone').innerHTML = ``
   }
 
-  document.getElementById('donchon').append(btnElem)
+  if (timesClicked > 4) {
+    document.getElementById('btnD').innerHTML = `AHORA 3 VEZES MAS !!!`
+    document.getElementById('gone').innerHTML = ``
+  }
+  if (timesClicked > 7) {
+    document.getElementById('btnD').innerHTML = `NOW CLICK FOR THE LAST CLICK`
+    document.getElementById('gone').innerHTML = ``
+  }
+  if (timesClicked > 8) {
+    document.getElementById('btnD').innerHTML = `<3`
+    document.getElementById('gone').innerHTML = `I hope you have a good Friday chonchies, smile and have fun today`
+  }
 
-  console.log('test', timesClicked)
+  document.getElementById('donchon').append(btnElem)
+  
+  if (timesClicked > 9) {
+    document.getElementById('btnD').innerHTML = `<3`
+    document.getElementById('gone').innerHTML = ``
+    document.getElementById('mafry').innerHTML = ``
+    document.getElementById('donchon').innerHTML = ``
+    document.getElementById('donchon').innerHTML = `<img src="yo quiero leche.jpg">`
+  }
+  
+})
+
+  
   
 
-})
+
   
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
